@@ -100,9 +100,12 @@ target_link_libraries(
     ${FLANN_LIBRARY}
     ${G2O_LIBRARIES}
 )
+# 针对特定目标禁用 -Wattributes 警告
+target_compile_options(funny_lidar_slam_lib PRIVATE -Wno-attributes)
 
 add_executable(funny_lidar_slam app/lidar_slam_app.cpp)
 target_link_libraries(funny_lidar_slam funny_lidar_slam_lib)
+target_compile_options(funny_lidar_slam PRIVATE -Wno-attributes)
 
 ### TEST ###
 option(build_unit_tests "will execute all unit tests" ON)

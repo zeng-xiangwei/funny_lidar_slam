@@ -16,6 +16,7 @@
 #include <cstdint>
 #include <deque>
 #include <mutex>
+#include <optional>
 
 /*!
  * Used to search for nearest data by timestamp

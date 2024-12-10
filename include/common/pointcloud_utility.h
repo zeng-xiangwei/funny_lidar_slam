@@ -270,4 +270,12 @@ inline PCLPointCloudXYZI::Ptr VoxelGridCloud(const PCLPointCloudXYZI& cloud, flo
     return output;
 }
 
+inline bool PCLPointIsFinite(const PCLPointXYZI& p) {
+    if (!std::isfinite(p.x) || !std::isfinite(p.y) || !std::isfinite(p.z) || !std::isfinite(p.intensity)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 #endif //FUNNY_LIDAR_SLAM_POINTCLOUD_UTILITY_H

@@ -471,7 +471,7 @@ pcl::PointCloud<PointXYZIRT>::Ptr PreProcessing::ConvertMessageToCloud(
         pcl::PointCloud<PointXYZIRT>::Ptr cloud_in_ptr(new pcl::PointCloud<PointXYZIRT>);
         cloud_in_ptr->reserve(point_size);
         for (size_t i = 0; i < point_size; ++i) {
-            if (!pcl::isFinite(cloud_none[i])) {
+            if (!PCLPointIsFinite(cloud_none[i])) {
                 continue;
             }
 

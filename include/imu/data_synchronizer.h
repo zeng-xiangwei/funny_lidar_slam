@@ -10,6 +10,7 @@
 
 #include <mutex>
 #include <deque>
+#include <optional>
 
 class DataSynchronizer {
 public:
